@@ -1,6 +1,0 @@
-## To get the list of the EC2 hosts for a project ##
-aws ec2 describe-instances --query 'Reservations[*].[Instances[*].[Tags[?Key==`Name`]|[0].Value,ImageId,InstanceId,InstanceType,PrivateIpAddress,Placement.[AvailabilityZone][0],SubnetId]]' --output table
-
-
-## To get the details about the AMI ##
-aws ec2 describe-images --image-ids ami-844e0bf7 --query 'Images[*].[CreationDate,ImageId]' --output table
